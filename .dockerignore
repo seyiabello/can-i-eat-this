@@ -1,0 +1,14 @@
+.venv
+frontend
+node_modules
+qr-codes
+scripts
+tests
+logs
+__pycache__
+*.pyc
+.pytest_cache
+.git
+.env
+context.md
+README.md

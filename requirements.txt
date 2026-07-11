@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+pydantic
+openai
+pytest
+python-dotenv
+qrcode[pil]

@@ -1,0 +1,28 @@
+# python
+.venv
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# secrets
+.env
+
+# personal planning notes, not part of the submission
+context.md
+
+# logs
+logs/*.log
+
+# frontend
+frontend/node_modules/
+frontend/.next/
+frontend/next-env.d.ts
+frontend/*.tsbuildinfo
+frontend/.vercel
+
+# fly
+.fly/
+
+# editor / tooling
+.impeccable/
+.claude/

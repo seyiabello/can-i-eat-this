@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ops loop diagram</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    padding: 40px;
+  }
+  .canvas {
+    position: relative;
+    width: 1180px;
+    height: 620px;
+  }
+  .node {
+    position: absolute;
+    width: 200px;
+    border-radius: 14px;
+    border: 2px solid;
+    padding: 14px 16px;
+    text-align: center;
+  }
+  .node h3 {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .node p {
+    margin: 0;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.35;
+  }
+
+  .built { background: #fbeed2; border-color: #d3a233; }
+  .built h3 { color: #93670f; }
+
+  .future { background: #f2f2f2; border-color: #b6b6b6; border-style: dashed; }
+  .future h3 { color: #6b6b6b; }
+  .future p { color: #888; }
+
+  svg.arrows {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1180px;
+    height: 620px;
+    pointer-events: none;
+  }
+
+  .section-label {
+    position: absolute;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .section-sub {
+    position: absolute;
+    font-size: 12px;
+    color: #888;
+  }
+  .divider {
+    position: absolute;
+    border-left: 2px dashed #ccc;
+  }
+</style>
+</head>
+<body>
+  <div class="canvas">
+
+    <svg class="arrows" viewBox="0 0 1180 620">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#999" />
+        </marker>
+        <marker id="arrow-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#aaa" />
+        </marker>
+      </defs>
+
+      <!-- built chain -->
+      <path d="M 230,150 L 300,150" stroke="#c48b1f" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+
+      <!-- built to future -->
+      <path d="M 500,150 L 570,150" stroke="#aaa" stroke-width="2" stroke-dasharray="6,5" fill="none" marker-end="url(#arrow-gray)" />
+
+      <!-- future chain -->
+      <path d="M 770,150 L 840,150" stroke="#aaa" stroke-width="2" stroke-dasharray="6,5" fill="none" marker-end="url(#arrow-gray)" />
+      <path d="M 940,190 C 940,260 940,300 900,330" stroke="#aaa" stroke-width="2" stroke-dasharray="6,5" fill="none" marker-end="url(#arrow-gray)" />
+      <path d="M 700,370 L 630,370" stroke="#aaa" stroke-width="2" stroke-dasharray="6,5" fill="none" marker-end="url(#arrow-gray)" />
+
+      <!-- loop back to trace log -->
+      <path d="M 430,410 C 200,470 90,300 90,190 C 90,175 100,165 115,155"
+            stroke="#aaa" stroke-width="2" stroke-dasharray="6,5" fill="none" marker-end="url(#arrow-gray)" />
+    </svg>
+
+    <div class="section-label" style="left:20px; top:40px; color:#93670f;">Built for this prototype</div>
+    <div class="section-sub" style="left:20px; top:60px;">runs already, on every query</div>
+
+    <div class="node built" style="left:20px; top:110px;">
+      <h3>Trace log</h3>
+      <p>question, retrieved item, route taken (deterministic or LLM), final state</p>
+    </div>
+
+    <div class="node built" style="left:300px; top:110px;">
+      <h3>State check</h3>
+      <p>rule-based check that the output is one of the three valid states, else unverified</p>
+    </div>
+
+    <div class="divider" style="left:555px; top:30px; height:560px;"></div>
+
+    <div class="section-label" style="left:590px; top:40px; color:#6b6b6b;">Add once this runs for real</div>
+    <div class="section-sub" style="left:590px; top:60px;">not built, not needed for a demo</div>
+
+    <div class="node future" style="left:570px; top:110px;">
+      <h3>Eval</h3>
+      <p>was it good? scripted checks against known edge cases, or an LLM judge</p>
+    </div>
+
+    <div class="node future" style="left:840px; top:110px;">
+      <h3>Observe</h3>
+      <p>was it healthy? latency, token spend, error rate over time</p>
+    </div>
+
+    <div class="node future" style="left:840px; top:330px;">
+      <h3>Diagnose</h3>
+      <p>when and why a specific answer broke, using the trace log</p>
+    </div>
+
+    <div class="node future" style="left:430px; top:330px;">
+      <h3>Release</h3>
+      <p>ship a fix safely: prompt, model choice, dataset, versioned and re-evaluated</p>
+    </div>
+
+  </div>
+</body>
+</html>

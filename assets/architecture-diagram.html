@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Architecture diagram</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    padding: 40px;
+    width: 1360px;
+  }
+  .canvas {
+    position: relative;
+    width: 1280px;
+    height: 1060px;
+  }
+  .node {
+    position: absolute;
+    width: 300px;
+    border-radius: 14px;
+    border: 2px solid;
+    padding: 16px 20px;
+    text-align: center;
+  }
+  .node h3 {
+    margin: 0 0 4px 0;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .node p {
+    margin: 0;
+    font-size: 13px;
+    color: #555;
+  }
+  .tag {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+
+  .cream   { background: #f2ede2; border-color: #cabfa4; }
+  .cream h3 { color: #4a4436; }
+
+  .green   { background: #d9f0e6; border-color: #4f9c7f; }
+  .green h3 { color: #1f6b4f; }
+  .green .tag { background: #c2e6d4; color: #1f6b4f; }
+
+  .purple  { background: #e6e1f7; border-color: #8f7fd6; }
+  .purple h3 { color: #4a3a9c; }
+  .purple .tag { background: #d6cdf2; color: #4a3a9c; }
+
+  .maroon  { background: #f7dfdd; border-color: #c96a63; }
+  .maroon h3 { color: #9c332b; }
+
+  .orange  { background: #fbeed2; border-color: #d3a233; }
+  .orange h3 { color: #93670f; }
+
+  svg.arrows {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 1060px;
+    pointer-events: none;
+  }
+
+  .dashed-box {
+    position: absolute;
+    border: 2px dashed #b9b9b9;
+    border-radius: 16px;
+  }
+  .dashed-label {
+    position: absolute;
+    font-size: 13px;
+    font-weight: 700;
+    color: #666;
+  }
+  .dashed-sub {
+    position: absolute;
+    font-size: 11px;
+    color: #888;
+  }
+
+  .col-label {
+    position: absolute;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+  <div class="canvas">
+
+    <svg class="arrows" viewBox="0 0 1280 1060">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#999" />
+        </marker>
+      </defs>
+      <!-- user interaction to two branches -->
+      <path d="M 490,150 C 400,190 300,190 250,230" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+      <path d="M 690,150 C 780,190 880,190 930,230" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+
+      <!-- left column down -->
+      <path d="M 190,330 L 190,420" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+      <!-- right column down -->
+      <path d="M 990,330 L 990,420" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+      <path d="M 990,560 L 990,650" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+
+      <!-- both columns merge into validation -->
+      <path d="M 190,520 C 190,650 380,760 500,790" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+      <path d="M 990,750 C 990,790 780,800 690,800" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+
+      <!-- validation to response -->
+      <path d="M 590,890 L 590,960" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+
+      <!-- validation to ops loop -->
+      <path d="M 740,830 L 900,830" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+      <path d="M 1040,900 L 1040,950" stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+    </svg>
+
+    <!-- Row 0: entry point -->
+    <div class="node cream" style="left:490px; top:70px;">
+      <h3>User interaction</h3>
+      <p>picks a dish + allergen, or types a free-text question</p>
+    </div>
+
+    <div class="col-label" style="left:90px; top:195px; color:#1f6b4f;">Route A &middot; no LLM</div>
+    <div class="col-label" style="left:900px; top:195px; color:#4a3a9c;">Route B &middot; LLM</div>
+
+    <!-- Row 1: branches -->
+    <div class="node green" style="left:40px; top:230px;">
+      <h3>Button tap</h3>
+      <p>item and allergen both already known</p>
+      <span class="tag">POST /check</span>
+    </div>
+
+    <div class="node purple" style="left:840px; top:230px;">
+      <h3>Free-text question</h3>
+      <p>e.g. "any nuts today?" or "is this okay for a shellfish allergy?"</p>
+      <span class="tag">POST /ask</span>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="node green" style="left:40px; top:420px; width:300px;">
+      <h3>Deterministic check</h3>
+      <p>membership lookup against confirmed_allergens, plus the ambiguous-flag override</p>
+      <span class="tag">~200ms &middot; free</span>
+    </div>
+
+    <div class="node purple" style="left:840px; top:420px;">
+      <h3>Retrieve menu item</h3>
+      <p>matches free text to one dish (substring / fuzzy match, no embeddings)</p>
+    </div>
+
+    <div class="node purple" style="left:840px; top:650px;">
+      <h3>LLM classification</h3>
+      <p>GPT-4o-mini + retrieved item, forced into one of three states</p>
+      <span class="tag">real API call</span>
+    </div>
+
+    <!-- Row 3: validation -->
+    <div class="node maroon" style="left:440px; top:790px;">
+      <h3>Output validation</h3>
+      <p>safe / unsafe / unverified &mdash; ambiguous items can never come back safe</p>
+    </div>
+
+    <!-- Row 4: response -->
+    <div class="node cream" style="left:440px; top:960px;">
+      <h3>Response to user</h3>
+      <p>instant for button taps, a few seconds for free text</p>
+    </div>
+
+    <!-- Ops loop -->
+    <div class="dashed-box" style="left:900px; top:790px; width:340px; height:200px;"></div>
+    <div class="dashed-label" style="left:920px; top:802px;">Ops loop</div>
+    <div class="dashed-sub" style="left:920px; top:820px;">runs alongside either route</div>
+
+    <div class="node orange" style="left:920px; top:840px; width:280px;">
+      <h3 style="font-size:15px;">Trace log</h3>
+      <p>logs question, retrieved item, route taken, final state</p>
+    </div>
+
+    <div class="node orange" style="left:920px; top:950px; width:280px;">
+      <h3 style="font-size:15px;">State check</h3>
+      <p>confirms output is one of the three valid states, else unverified</p>
+    </div>
+
+  </div>
+</body>
+</html>

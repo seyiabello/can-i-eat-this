@@ -1,0 +1,242 @@
+[
+  {
+    "item": "Chicken katsu curry",
+    "allergen_notes_raw": "gluten, soya",
+    "confirmed_allergens": ["gluten", "soya"],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£5.20"
+  },
+  {
+    "item": "Veggie chilli (vegan?)",
+    "allergen_notes_raw": "celery. may contain traces of nuts",
+    "confirmed_allergens": ["celery"],
+    "ambiguous_flag": true,
+    "ambiguous_reason": "may contain traces of nuts",
+    "price": "£4.50"
+  },
+  {
+    "item": "Margherita pizza slice",
+    "allergen_notes_raw": "WHEAT, MILK",
+    "confirmed_allergens": ["gluten", "milk"],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£2.80"
+  },
+  {
+    "item": "Thai green curry",
+    "allergen_notes_raw": "see chef",
+    "confirmed_allergens": [],
+    "ambiguous_flag": true,
+    "ambiguous_reason": "see chef - allergen info not on the board, must ask kitchen staff",
+    "price": "£5.20"
+  },
+  {
+    "item": "Jacket potato with beans",
+    "allergen_notes_raw": "none",
+    "confirmed_allergens": [],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£3.95"
+  },
+  {
+    "item": "Flapjack",
+    "allergen_notes_raw": "oats, butter, golden syrup, peanuts??",
+    "confirmed_allergens": ["gluten"],
+    "ambiguous_flag": true,
+    "ambiguous_reason": "peanuts?? - listed with question marks in original notes, presence not confirmed",
+    "price": "£1.60"
+  },
+  {
+    "item": "Halloumi wrap",
+    "allergen_notes_raw": "milk, wheat, sesame (wrap)",
+    "confirmed_allergens": ["milk", "gluten", "sesame"],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£4.80"
+  },
+  {
+    "item": "Beef lasagne",
+    "allergen_notes_raw": "gluten milk celery",
+    "confirmed_allergens": ["gluten", "milk", "celery"],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£5.50"
+  },
+  {
+    "item": "Fruit pot",
+    "allergen_notes_raw": "null",
+    "confirmed_allergens": [],
+    "ambiguous_flag": true,
+    "ambiguous_reason": "no allergen data recorded (field literally reads 'null')",
+    "price": "£2.10"
+  },
+  {
+    "item": "Katsu sando (special)",
+    "allergen_notes_raw": "ask counter",
+    "confirmed_allergens": [],
+    "ambiguous_flag": true,
+    "ambiguous_reason": "ask counter - no allergen data available, must ask staff directly",
+    "price": "£4.95"
+  },
+  {
+    "item": "Prawn cocktail",
+    "allergen_notes_raw": "crustaceans, egg (mayo), mustard",
+    "confirmed_allergens": ["crustaceans", "eggs", "mustard"],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£3.80"
+  },
+  {
+    "item": "Fish finger sandwich",
+    "allergen_notes_raw": "fish, gluten (bread + coating)",
+    "confirmed_allergens": ["fish", "gluten"],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£4.20"
+  },
+  {
+    "item": "Moules marinière",
+    "allergen_notes_raw": "molluscs, celery, milk (cream)",
+    "confirmed_allergens": ["molluscs", "celery", "milk"],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£6.50"
+  },
+  {
+    "item": "Falafel wrap",
+    "allergen_notes_raw": "sesame (tahini), gluten (wrap)",
+    "confirmed_allergens": ["sesame", "gluten"],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£4.60"
+  },
+  {
+    "item": "Lentil dahl",
+    "allergen_notes_raw": "",
+    "confirmed_allergens": [],
+    "ambiguous_flag": true,
+    "ambiguous_reason": "allergen field left blank on the board",
+    "price": "£4.10"
+  },
+  {
+    "item": "Chicken satay skewers",
+    "allergen_notes_raw": "soya, gluten (marinade). sauce made with groundnut oil",
+    "confirmed_allergens": ["soya", "gluten", "peanuts"],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£5.10"
+  },
+  {
+    "item": "Sausage roll",
+    "allergen_notes_raw": "gluten, milk. may contain sulphites",
+    "confirmed_allergens": ["gluten", "milk"],
+    "ambiguous_flag": true,
+    "ambiguous_reason": "may contain sulphites",
+    "price": "£2.50"
+  },
+  {
+    "item": "Egg fried rice",
+    "allergen_notes_raw": "egg, soya",
+    "confirmed_allergens": ["eggs", "soya"],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£3.60"
+  },
+  {
+    "item": "Lupin seed bread roll",
+    "allergen_notes_raw": "lupin, gluten",
+    "confirmed_allergens": ["lupin", "gluten"],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£1.20"
+  },
+  {
+    "item": "Coleslaw (side)",
+    "allergen_notes_raw": "egg (mayo), mustard",
+    "confirmed_allergens": ["eggs", "mustard"],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£1.80"
+  },
+  {
+    "item": "Sticky toffee pudding",
+    "allergen_notes_raw": "gluten, milk, may contain nuts",
+    "confirmed_allergens": ["gluten", "milk"],
+    "ambiguous_flag": true,
+    "ambiguous_reason": "may contain nuts",
+    "price": "£3.20"
+  },
+  {
+    "item": "Vegetable spring rolls",
+    "allergen_notes_raw": "gluten. fried in shared oil w/ prawn crackers",
+    "confirmed_allergens": ["gluten"],
+    "ambiguous_flag": true,
+    "ambiguous_reason": "fried in shared oil with prawn crackers - possible crustacean cross-contamination not formally recorded",
+    "price": "£2.90"
+  },
+  {
+    "item": "Chickpea curry",
+    "allergen_notes_raw": "-",
+    "confirmed_allergens": [],
+    "ambiguous_flag": true,
+    "ambiguous_reason": "allergen field marked with a dash, no data recorded",
+    "price": "£4.30"
+  },
+  {
+    "item": "Cheese & pickle sandwich",
+    "allergen_notes_raw": "MILK, GLUTEN, mustard (pickle)",
+    "confirmed_allergens": ["milk", "gluten", "mustard"],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£3.40"
+  },
+  {
+    "item": "Smoked salmon bagel",
+    "allergen_notes_raw": "fish, gluten, milk (cream cheese)",
+    "confirmed_allergens": ["fish", "gluten", "milk"],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£5.80"
+  },
+  {
+    "item": "Beef burger (no bun)",
+    "allergen_notes_raw": "none",
+    "confirmed_allergens": [],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£4.90"
+  },
+  {
+    "item": "Tuna mayo baguette",
+    "allergen_notes_raw": "fish, egg (mayo), gluten",
+    "confirmed_allergens": ["fish", "eggs", "gluten"],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£4.10"
+  },
+  {
+    "item": "Almond croissant",
+    "allergen_notes_raw": "gluten, milk, nuts (almonds)",
+    "confirmed_allergens": ["gluten", "milk", "nuts"],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£2.60"
+  },
+  {
+    "item": "Soup of the day",
+    "allergen_notes_raw": "varies - ask server",
+    "confirmed_allergens": [],
+    "ambiguous_flag": true,
+    "ambiguous_reason": "varies - ask server, changes daily and isn't recorded per batch",
+    "price": "£2.80"
+  },
+  {
+    "item": "Marinated olives (side)",
+    "allergen_notes_raw": "sulphites",
+    "confirmed_allergens": ["sulphites"],
+    "ambiguous_flag": false,
+    "ambiguous_reason": null,
+    "price": "£1.50"
+  }
+]
