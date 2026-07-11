@@ -9,6 +9,7 @@ __pycache__/
 
 # personal planning notes, not part of the submission
 context.md
+pitch/
 
 # logs
 logs/*.log
