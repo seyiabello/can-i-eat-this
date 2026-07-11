@@ -60,7 +60,7 @@ export default function AllergenScan() {
   );
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-2xl flex-col gap-6 px-5 py-8">
+    <main className="mx-auto flex min-h-screen max-w-3xl flex-col gap-6 px-5 py-8">
       <header>
         <Link href="/" className="text-xs text-ink-faint underline">
           &larr; full picker
@@ -91,7 +91,7 @@ export default function AllergenScan() {
       )}
 
       {results && (
-        <ul className="flex flex-col gap-2">
+        <ul className="fade-rise-in flex flex-col gap-2">
           {results.map((r) => {
             const styles = STATUS_STYLES[r.status];
             return (

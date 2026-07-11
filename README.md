@@ -260,10 +260,16 @@ can-i-eat-this/
 ├── assets/                    architecture diagrams, source HTML and PNG
 ├── tests/
 │   └── test_validate.py       unit tests for the safety logic
+├── PRODUCT.md                 who this is for, brand personality, anti-references
+├── DESIGN.md                  the actual design system: colors, type, components, rules
 ├── Dockerfile
 ├── fly.toml
 └── requirements.txt
 ```
+
+### Design system
+
+`PRODUCT.md` and `DESIGN.md` document the frontend's visual system properly rather than leaving it as implicit choices in the CSS. Worth calling out one concrete decision from that pass: the muted gray used for prices and captions was failing WCAG AA contrast (about 4.0:1 against the near-black background, the floor is 4.5:1), caught by actually checking the numbers rather than eyeballing it, and fixed. The unverified/amber result state is also a deliberate design decision, not an afterthought: it's styled with the exact same visual weight as safe and unsafe, since a "can't confirm" result being read as a lesser or broken answer would undermine the whole point of the three-state design.
 
 ---
 

@@ -23,6 +23,7 @@ frontend/.vercel
 # fly
 .fly/
 
-# editor / tooling
-.impeccable/
+# editor / tooling (design.json is real content, keep it; caches are not)
+.impeccable/hook.cache.json
+frontend/.impeccable/
 .claude/

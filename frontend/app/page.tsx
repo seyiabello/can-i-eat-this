@@ -86,7 +86,7 @@ export default function Home() {
   }
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-2xl flex-col gap-6 px-5 py-8">
+    <main className="mx-auto flex min-h-screen max-w-3xl flex-col gap-6 px-5 py-8">
       <header>
         <h1 className="text-2xl font-semibold text-ink">Can I eat this?</h1>
         <p className="mt-1 text-sm text-ink-muted">
@@ -207,7 +207,7 @@ export default function Home() {
       {result && !asking && (
         <section className="flex flex-col gap-4">
           <div
-            className={`rounded-xl border ${STATUS_STYLES[result.status].border} ${STATUS_STYLES[result.status].bg} px-5 py-6`}
+            className={`fade-rise-in rounded-xl border ${STATUS_STYLES[result.status].border} ${STATUS_STYLES[result.status].bg} px-5 py-6`}
           >
             <p className={`text-lg font-semibold ${STATUS_STYLES[result.status].ink}`}>
               {STATUS_STYLES[result.status].heading}

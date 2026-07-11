@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-11T00:00:00Z",
+  "title": "Design System: Can I Eat This?",
+  "extensions": {
+    "colorMeta": {
+      "signal": { "role": "primary", "displayName": "Signal Blue", "canonical": "oklch(62% 0.19 259)", "tonalRamp": ["#0b1a3d", "#122a5c", "#1e3a8a", "#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#dbeafe"] },
+      "success-border": { "role": "semantic", "displayName": "Confirmed Safe Green", "canonical": "oklch(45% 0.13 154)", "tonalRamp": ["#031f0e", "#052e16", "#0c3d1e", "#15803d", "#16a34a", "#4ade80", "#86efac", "#dcfce7"] },
+      "danger-border": { "role": "semantic", "displayName": "Confirmed Unsafe Red", "canonical": "oklch(42% 0.17 25)", "tonalRamp": ["#2c0505", "#450a0a", "#7f1d1d", "#991b1b", "#dc2626", "#f87171", "#fca5a5", "#fee2e2"] },
+      "warning-border": { "role": "semantic", "displayName": "Ask Staff Amber", "canonical": "oklch(48% 0.14 70)", "tonalRamp": ["#231202", "#422006", "#713f12", "#854d0e", "#ca8a04", "#facc15", "#fde68a", "#fef9c3"] },
+      "canvas": { "role": "neutral", "displayName": "Night Canvas", "canonical": "oklch(15% 0.02 260)", "tonalRamp": ["#030712", "#0a0f1c", "#111827", "#1f2937", "#374151", "#6b7280", "#9ca3af", "#f3f4f6"] }
+    },
+    "typographyMeta": {
+      "body": { "displayName": "Body", "purpose": "Every piece of text in the interface, one voice throughout." },
+      "label": { "displayName": "Label", "purpose": "Captions, prices, helper text, small UI labels." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-hover", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Border and background transitions on hover for pickable tiles and buttons." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one clear next action on a screen, e.g. New dish, Ask.",
+      "html": "<button class=\"ds-btn-primary\">New dish</button>",
+      "css": ".ds-btn-primary { background: #3b82f6; color: #ffffff; padding: 8px 16px; border-radius: 8px; border: none; font-weight: 500; font-size: 14px; transition: background 0.2s cubic-bezier(0.4,0,0.2,1); } .ds-btn-primary:hover { background: #2563eb; } .ds-btn-primary:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button / Pickable Tile",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Dish tiles, allergen tiles, and lower-emphasis actions like back or Ask about another allergen.",
+      "html": "<button class=\"ds-btn-secondary\">Margherita pizza slice</button>",
+      "css": ".ds-btn-secondary { background: #111827; color: #f3f4f6; padding: 12px 16px; border-radius: 8px; border: 1px solid #1f2937; font-weight: 500; font-size: 14px; text-align: left; transition: background 0.2s cubic-bezier(0.4,0,0.2,1), border-color 0.2s cubic-bezier(0.4,0,0.2,1); } .ds-btn-secondary:hover { background: #1f2937; border-color: #3b82f6; } .ds-btn-secondary:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; }"
+    },
+    {
+      "name": "Result Card - Safe",
+      "kind": "custom",
+      "refersTo": "result-card-safe",
+      "description": "The signature component. Reports a confirmed-safe result.",
+      "html": "<div class=\"ds-card ds-card-safe\"><p class=\"ds-card-heading\">Safe</p><p class=\"ds-card-item\">Jacket potato with beans</p><p class=\"ds-card-body\">No milk listed in the confirmed allergens.</p></div>",
+      "css": ".ds-card { border-radius: 16px; padding: 24px 20px; border-width: 2px; border-style: solid; } .ds-card-safe { background: #052e16; border-color: #166534; } .ds-card-heading { font-weight: 700; font-size: 18px; margin: 0 0 4px; color: #86efac; } .ds-card-item { font-size: 14px; color: #d1d5db; margin: 0 0 8px; } .ds-card-body { font-size: 14px; color: #d1d5db; margin: 0; }"
+    },
+    {
+      "name": "Result Card - Unsafe",
+      "kind": "custom",
+      "refersTo": "result-card-unsafe",
+      "description": "Reports a confirmed-unsafe result. Same weight and structure as Safe, only the color changes.",
+      "html": "<div class=\"ds-card ds-card-unsafe\"><p class=\"ds-card-heading\">Unsafe</p><p class=\"ds-card-item\">Margherita pizza slice</p><p class=\"ds-card-body\">Margherita pizza slice is confirmed to contain milk.</p></div>",
+      "css": ".ds-card { border-radius: 16px; padding: 24px 20px; border-width: 2px; border-style: solid; } .ds-card-unsafe { background: #450a0a; border-color: #991b1b; } .ds-card-heading { font-weight: 700; font-size: 18px; margin: 0 0 4px; color: #f87171; } .ds-card-item { font-size: 14px; color: #d1d5db; margin: 0 0 8px; } .ds-card-body { font-size: 14px; color: #d1d5db; margin: 0; }"
+    },
+    {
+      "name": "Result Card - Unverified",
+      "kind": "custom",
+      "refersTo": "result-card-unverified",
+      "description": "Reports an ambiguous or missing-data result. Must carry the exact same visual weight as Safe and Unsafe, never look like an error.",
+      "html": "<div class=\"ds-card ds-card-unverified\"><p class=\"ds-card-heading\">Can't confirm - ask staff</p><p class=\"ds-card-item\">Veggie chilli (vegan?)</p><p class=\"ds-card-body\">Menu data is flagged ambiguous (may contain traces of nuts) - cannot confirm safe.</p></div>",
+      "css": ".ds-card { border-radius: 16px; padding: 24px 20px; border-width: 2px; border-style: solid; } .ds-card-unverified { background: #422006; border-color: #854d0e; } .ds-card-heading { font-weight: 700; font-size: 18px; margin: 0 0 4px; color: #facc15; } .ds-card-item { font-size: 14px; color: #d1d5db; margin: 0 0 8px; } .ds-card-body { font-size: 14px; color: #d1d5db; margin: 0; }"
+    },
+    {
+      "name": "Free-text Input",
+      "kind": "input",
+      "refersTo": "input-freetext",
+      "description": "The fallback question box for anything that doesn't fit the two-tap flow.",
+      "html": "<input class=\"ds-input\" placeholder=\"e.g. is this okay for a shellfish allergy?\" />",
+      "css": ".ds-input { background: #111827; color: #f3f4f6; border: 1px solid #1f2937; border-radius: 8px; padding: 8px 12px; font-size: 14px; } .ds-input::placeholder { color: #9ca3af; } .ds-input:focus-visible { outline: none; border-color: #3b82f6; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Night Shift Counter",
+    "overview": "Dark, quiet, low-glare, the way a well-run kitchen pass looks at 11pm: nothing shouting for attention except the one thing that needs to be seen right now. Almost the entire surface sits in a narrow band of near-black neutrals with no decoration, no gradients, no shadows, no accent color competing for attention. Color only ever appears to mean something. The signal blue shows up on interactive elements a user needs to find and nowhere else. The safe/unsafe/unverified triad is the one place saturated color is allowed, and it always arrives with a plain-language label next to it, never alone.",
+    "keyCharacteristics": [
+      "Near-black neutral canvas, flat, no shadows",
+      "One interactive accent (signal blue), used sparingly",
+      "Three semantic status colors that are the actual product, never decorative",
+      "Single typeface, no display/body pairing",
+      "Large tap targets, short copy, built to be read in two seconds"
+    ],
+    "rules": [
+      { "name": "The One Meaning Rule", "body": "Saturated color never appears for decoration. If a color isn't the signal accent or a safety status, it doesn't belong on this screen.", "section": "colors" },
+      { "name": "The Never-Lesser Rule", "body": "The unverified/amber state is styled with exactly the same visual weight as safe and unsafe. It must never look like a fallback or an error.", "section": "colors" },
+      { "name": "The Single Voice Rule", "body": "Do not introduce a second font family for emphasis. Weight and size carry hierarchy, not a display face.", "section": "typography" },
+      { "name": "The Flat-by-Default Rule", "body": "No box-shadow anywhere in the system. If something needs to feel closer to the user, lighten its background one step and brighten its border.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep color meaning-only: signal blue for interaction, the semantic triad for results, nothing else",
+      "Do give the unverified/amber state the same visual weight as safe and unsafe",
+      "Do keep every result labeled in text, never rely on color alone",
+      "Do keep the whole interface flat",
+      "Do size tap targets for a stranger glancing at a phone or counter screen"
+    ],
+    "donts": [
+      "Don't add a hero-metric card, a gradient accent, an eyebrow label, or a numbered section marker",
+      "Don't introduce a second typeface for personality",
+      "Don't add box-shadows or glassmorphism",
+      "Don't use playful, game-like, or cutesy visual language",
+      "Don't let the amber/unverified card read as broken, muted, or lower-priority"
+    ]
+  }
+}
