@@ -295,11 +295,11 @@
 
     <!-- 6: Architecture -->
     <div class="slide">
-      <div class="slide-content">
+      <div class="slide-content" style="gap: 12px;">
         <p class="kicker">Technology choices</p>
-        <h1 class="headline" style="max-width: 22ch;">Two routes. The LLM only covers one.</h1>
-        <img class="shot" src="img/architecture-diagram-dark.png" style="width: 100%; max-height: 340px; object-fit: contain; object-position: left top;" alt="Two-route architecture diagram">
-        <p class="subhead" style="max-width: 78ch;">Button taps never touch an LLM, it's a dict lookup against confirmed allergens, under 200ms. GPT-4o-mini only runs for free-text questions, the one part of this that actually needs language understanding.</p>
+        <h1 class="headline" style="max-width: 40ch;">Two routes. One touches an LLM.</h1>
+        <img class="shot" src="img/architecture-diagram-dark.png" style="width: auto; height: 460px; max-width: 100%; object-fit: contain; object-position: left top;" alt="Two-route architecture diagram">
+        <p class="subhead" style="max-width: 90ch;">Button taps skip the LLM entirely, a dict lookup under 200ms. GPT-4o-mini only runs for free-text questions.</p>
       </div>
     </div>
 
