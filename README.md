@@ -23,6 +23,8 @@ A quick allergen check for a dining hall counter, built for Compass Group's AI E
 
 The QR codes in `qr-codes/` point at the live frontend, so any one of them is scannable from a real phone right now.
 
+The pitch deck for the interview is at [`slides/can-i-eat-this-pitch-deck.pdf`](slides/can-i-eat-this-pitch-deck.pdf), source in `slides/deck.html`.
+
 ---
 
 ## The scenario
