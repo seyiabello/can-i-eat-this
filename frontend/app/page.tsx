@@ -86,7 +86,7 @@ export default function Home() {
   }
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-3xl flex-col gap-6 px-5 py-8">
+    <main className="mx-auto flex min-h-screen max-w-4xl flex-col gap-6 px-5 py-8">
       <header>
         <h1 className="text-2xl font-semibold text-ink">Can I eat this?</h1>
         <p className="mt-1 text-sm text-ink-muted">
@@ -103,7 +103,7 @@ export default function Home() {
       {!selectedItem && (
         <section className="flex flex-col gap-3">
           <h2 className="text-sm font-medium text-ink-secondary">1. Select a dish</h2>
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
             {menu.map((item) => (
               <button
                 key={item.item}
@@ -131,7 +131,7 @@ export default function Home() {
               scanned for one allergen, no dish-picking needed.
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
+          <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 lg:grid-cols-5">
             {ALLERGENS.map((allergen) => (
               <Link
                 key={allergen}
@@ -155,7 +155,7 @@ export default function Home() {
               back
             </button>
           </div>
-          <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
+          <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 lg:grid-cols-5">
             {ALLERGENS.map((allergen) => (
               <button
                 key={allergen}
