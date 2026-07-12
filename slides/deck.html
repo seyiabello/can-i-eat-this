@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Can I Eat This? — pitch deck</title>
+<title>Can I Eat This? Pitch Deck</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -218,7 +218,7 @@
     <!-- 1: The moment -->
     <div class="slide active">
       <div class="slide-content">
-        <p class="kicker">Can I eat this? — Compass Group AI Engineer pre-work</p>
+        <p class="kicker">Can I eat this? &middot; Compass Group AI Engineer pre-work</p>
         <h1 class="headline">12:40. Third in the queue.</h1>
         <p class="subhead">Priya has a severe nut allergy. The menu is a laminated sheet. The allergen folder is behind the counter. The server started Monday.</p>
         <p class="subhead" style="color: var(--ink);">She has about thirty seconds to decide if lunch is safe.</p>
@@ -226,18 +226,19 @@
       <p class="footer-note"><strong>Seyi Bello</strong> · a two-tap allergen check for that exact moment</p>
     </div>
 
-    <!-- 2: The problem -->
+    <!-- 2: The gap, not the problem -->
     <div class="slide">
       <div class="slide-content">
-        <p class="kicker">The problem</p>
-        <h1 class="headline" style="max-width: 26ch;">The data is the actual hazard, not the queue</h1>
+        <p class="kicker">The gap, not the problem</p>
+        <h1 class="headline" style="max-width: 30ch;">Great data. It just doesn't reach the counter.</h1>
+        <p class="subhead">Compass already compiles this well upstream, PPDS syncs allergen data from the supply chain because manual tracking isn't feasible. This is what still reaches the counter itself, straight from the brief's own starter menu:</p>
         <div class="chip-grid">
           <div class="chip"><div class="dish">Veggie chilli (vegan?)</div><div class="raw">"celery. may contain traces of nuts"</div></div>
           <div class="chip"><div class="dish">Thai green curry</div><div class="raw">"see chef"</div></div>
           <div class="chip"><div class="dish">Katsu sando (special)</div><div class="raw">"ask counter"</div></div>
           <div class="chip"><div class="dish">Fruit pot</div><div class="raw">"null"</div></div>
         </div>
-        <p class="subhead">This is the brief's own starter menu, not invented. A server who started Monday can't parse this in thirty seconds. Neither should an AI have to guess.</p>
+        <p class="subhead" style="color: var(--ink);">The gap isn't the data. It's getting it to the counter live, in the thirty seconds a server actually has.</p>
       </div>
     </div>
 
@@ -305,13 +306,14 @@
 
     <!-- 7: Hardest questions -->
     <div class="slide">
-      <div class="slide-content">
+      <div class="slide-content" style="gap: 14px;">
         <p class="kicker">The questions I expect to defend</p>
-        <h1 class="headline">Why these decisions, specifically</h1>
-        <div class="qa-grid">
-          <div class="qa"><div class="q">Why not a confidence score?</div><div class="a">It moves the guessing problem onto someone with thirty seconds. Three plain states don't.</div></div>
-          <div class="qa"><div class="q">Why not agentic, why no LangGraph or multi-agent setup?</div><div class="a">This is one bounded classification decision, not a multi-step workflow. Agentic complexity here is tool-stacking, not creativity.</div></div>
-          <div class="qa"><div class="q">Why no vector database?</div><div class="a">30 structured records, not a large unstructured corpus. Fuzzy string matching solves it for free, with no risk of confidently returning the wrong dish.</div></div>
+        <h1 class="headline" style="max-width: 30ch;">Why these decisions, specifically</h1>
+        <div class="qa-grid" style="gap: 10px;">
+          <div class="qa" style="padding: 12px 18px;"><div class="q">Doesn't Compass already have allergen systems?</div><div class="a">Yes, PPDS and the Compass Allergen App handle this well upstream. Neither reaches the thirty seconds at the counter, that's the specific gap this fills.</div></div>
+          <div class="qa" style="padding: 12px 18px;"><div class="q">Why not a confidence score?</div><div class="a">It moves the guessing problem onto someone with thirty seconds. Three plain states don't.</div></div>
+          <div class="qa" style="padding: 12px 18px;"><div class="q">Why not agentic, why no LangGraph or multi-agent setup?</div><div class="a">This is one bounded classification decision, not a multi-step workflow. Agentic complexity here is tool-stacking, not creativity.</div></div>
+          <div class="qa" style="padding: 12px 18px;"><div class="q">Why no vector database?</div><div class="a">30 structured records, not a large unstructured corpus. Fuzzy string matching solves it for free, with no risk of confidently returning the wrong dish.</div></div>
         </div>
       </div>
     </div>
@@ -347,7 +349,7 @@
     <!-- 10: Backup -->
     <div class="slide">
       <div class="slide-content">
-        <span class="badge">Backup slide — only if asked about production</span>
+        <span class="badge">Backup slide, only if asked about production</span>
         <h1 class="headline" style="max-width: 22ch;">What's next for the ops loop</h1>
         <img class="shot" src="img/ops-loop-diagram-dark.png" style="width: 100%; max-height: 360px; object-fit: contain; object-position: left top;" alt="Ops loop, built today versus a full LLMOps loop later">
         <p class="subhead" style="max-width: 78ch;">What's built today (trace log, state check) versus the full evaluate/observe/diagnose/release loop, deliberately not built yet, that's solving a maintenance problem this prototype doesn't have.</p>

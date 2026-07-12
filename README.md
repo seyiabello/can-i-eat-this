@@ -31,6 +31,8 @@ The pitch deck for the interview is at [`slides/can-i-eat-this-pitch-deck.pdf`](
 
 It's 12:40 in a busy dining hall. Third in the queue. The person in front has a severe nut allergy. The menu is a laminated sheet, the allergen folder is behind the counter, and the server started on Monday. They have about thirty seconds to decide whether lunch is safe. This app is meant to answer that question in the time it takes to tap a screen twice, for the customer and for the server who doesn't know the menu yet either.
 
+Compass already solves allergen management well upstream. The Compass Allergen App puts digital daily allergen reports on countertop tablets, the PPDS labelling system auto-compiles allergen data per recipe from a synchronised supply chain specifically because manual tracking isn't feasible, and Steamplicity already filters menu options against a patient's registered allergies in healthcare settings. None of that reaches the thirty seconds in the queue. This app targets that one narrow gap, the live moment between an untrained server and an uncertain customer, where the upstream data exists but hasn't reached the counter yet.
+
 ## What it does
 
 Pick a dish, then pick an allergen:
@@ -277,8 +279,8 @@ can-i-eat-this/
 
 ## Roadmap
 
-- [ ] Batch pipeline to turn a photo of a real laminated menu into structured entries, since hand-curating the dataset doesn't scale past a demo
-- [ ] Basic auth and a proper admin view for updating menu data day to day
+- [ ] Pull structured allergen data straight from PPDS instead of hand-curating a JSON file, since Compass already compiles this per recipe from the supply chain and it shouldn't be duplicated by hand
+- [ ] Basic auth and a proper admin view for the rare cases where counter-level data needs a manual override
 - [ ] The eval, observe, diagnose, release loop described above, once this is serving real traffic rather than a one-off demo
 
 ---
